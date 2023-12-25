@@ -16,7 +16,7 @@ class SensorSimulator(threading.Thread):
         self.simulation_file_path = simulation_file_path
         self.simulation_interval = simulation_interval
         self.id = id
-        self.bus = can.interface.Bus(channel='can0', bustype='socketcan')
+        self.bus = can.interface.Bus(channel='vcan0', bustype='socketcan')
 
     def run(self):
         while True:
