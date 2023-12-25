@@ -20,7 +20,6 @@ def start_sensors():
     return sensors
 
 def process_sensor_data(sensor_data):
-    # Example: Print the received sensor data
     print("Received Sensor Data:")
     for wheel, (sensor_id, pressure) in sensor_data.items():
         print(f"{wheel} (ID: {sensor_id}): {pressure}")
