@@ -22,7 +22,7 @@ def start_sensors():
 def main():
     sensors = start_sensors()
     while True:
-        # Your main logic goes here
+        #main logic goes here
         time.sleep(1)
 
 if __name__ == '__main__':
