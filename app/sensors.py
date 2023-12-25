@@ -3,7 +3,10 @@ import can
 import threading
 import time
 
-sensor_data = {"front_left": 0, "front_right": 0, "rear_left": 0, "rear_right": 0}
+sensor_data = {"front_left": {"id": 0, "pressure": 0},
+               "front_right": {"id": 1, "pressure": 0},
+               "rear_left": {"id": 2, "pressure": 0},
+               "rear_right": {"id": 3, "pressure": 0}}
 sensor_data_lock = threading.Lock()
 
 class SensorSimulator(threading.Thread):
@@ -22,9 +25,9 @@ class SensorSimulator(threading.Thread):
                 file.seek(0)
 
             with sensor_data_lock:
-                sensor_data[self.wheel_position] = pressure_value
+                sensor_data[self.wheel_position] = {"id": self.id, "pressure": pressure_value}
 
-            message = can.Message(arbitration_id=0x123, data=[self.id,pressure_value, 0, 0, 0], extended_id=False)
+            message = can.Message(arbitration_id=0x123, data=[self.id, pressure_value, 0, 0, 0], extended_id=False)
             self.bus.send(message)
 
             time.sleep(self.simulation_interval)
