@@ -1,7 +1,7 @@
 # can_interface.py
 import can
 
-sensor data = {}
+sensor_data = {}
 
 class CANInterface(threading.Thread):
     def __init__(self, channel='can0', bustype='socketcan'):
