@@ -19,7 +19,7 @@ SENSOR_ID_TO_WHEEL_POSITION = {
 sensor_data = {}
 
 class CANInterface(threading.Thread):
-    def __init__(self, channel='can0', bustype='socketcan'):
+    def __init__(self, channel='vcan0', bustype='socketcan'):
         self.bus = can.interface.Bus(channel=channel, bustype=bustype)
 
     def send_message(self, arbitration_id, data, extended_id=False):
