@@ -3,10 +3,10 @@ import can
 import threading
 import time
 
-sensor_data = {"front_left": {"id": 0, "pressure": 0},
-               "front_right": {"id": 1, "pressure": 0},
-               "rear_left": {"id": 2, "pressure": 0},
-               "rear_right": {"id": 3, "pressure": 0}}
+sensor_data = {"front_left": {"id": 1, "pressure": 0},
+               "front_right": {"id": 2, "pressure": 0},
+               "rear_left": {"id": 3, "pressure": 0},
+               "rear_right": {"id": 4, "pressure": 0}}
 sensor_data_lock = threading.Lock()
 
 class SensorSimulator(threading.Thread):
