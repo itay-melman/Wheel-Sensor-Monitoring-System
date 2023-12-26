@@ -6,9 +6,12 @@ the CANBUS protocol.
 ## Installation
 
 1. Clone the repo.
+   
 2. Install the required dependencies in requirements.txt
+   
 3.Running the Sensors Simulator: 
 python -m app.simulator
+
 4. Running the API:
 python -m app.api
 
